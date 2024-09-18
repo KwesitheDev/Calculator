@@ -5,6 +5,7 @@ let operator;
 //Operate function
 
 function operate(operand1, operand2, operator) {
+    operator = String(operator)
     switch (operator) {
         case '+':
             return add(operand1, operand2);
@@ -15,26 +16,24 @@ function operate(operand1, operand2, operator) {
         case '/':
             return div(operand1, operand2);
         default:
-            console.log("Invalid operand or operator");
+            console.log("Invalid operand or operator" + operator);
             return null;
     }
 }
 
 function add(para1, para2){
-    let result = para1 + para2;
-    return result;
+    return para1 + para2;
     
 }
 
 function sub(para1, para2){
-    let result = para1 - para2;
-    return result;
+    return para1 - para2;
     
 }
 
 function mul(para1, para2){
-    let result = para1 * para2;
-    return result;
+    
+    return para1 * para2;
     
 }
 
