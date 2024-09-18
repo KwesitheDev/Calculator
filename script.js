@@ -46,3 +46,27 @@ function div(para1, para2){
     return para1/para2;
     
 }
+
+// populate display function.
+let displayValue = '';
+ function populateDisplay(){
+    const display = document.querySelector(".display");
+    display.textContent = displayValue;
+ }
+
+ function numberClick(value){
+    displayValue += value;
+    populateDisplay();
+ }
+
+const numberButtons = document.querySelectorAll('.btn:not(.operator):not(#clear):not(#equals)');
+numberButtons.forEach(button => {
+    button.addEventListener('click', () => numberClick(button.textContent));
+});
+
+//Clear buttonn
+const clear = document.querySelector("#clear");
+clear.addEventListener('click', () =>{
+    displayValue = ''; // Reset display
+    populateDisplay(); // Update the display
+})
